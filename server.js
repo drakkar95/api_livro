@@ -35,3 +35,5 @@ app.get('/', (req,res) => {
 
 
 routes(app);
+
+module.exports = app;
