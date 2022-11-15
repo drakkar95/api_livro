@@ -2,7 +2,7 @@ import express from 'express'
 import db from "./config/dbConnect.js"
 import LivroController from './controller/livrosController.js';
 import livros from './models/Livro.js'
-
+import routes from './routes/index.js'
 
 const app = express();
 const PORT = 3333;
@@ -33,10 +33,5 @@ app.get('/', (req,res) => {
     res.send("Bem Vindo a esta Api inicial")
 })
 
-app.get('/livros', livroController.listarLivros)
-app.get('/livros/:id',livroController.pickOneBook)
-app.post('/livros', livroController.createBook)
-app.delete('/livros/:id', livroController.deleteBook)
-app.put('/livros/:id', livroController.updateBook)
 
-
+routes(app);
