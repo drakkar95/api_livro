@@ -34,34 +34,9 @@ app.get('/', (req,res) => {
 })
 
 app.get('/livros', livroController.listarLivros)
+app.get('/livros/:id',livroController.pickOneBook)
+app.post('/livros', livroController.createBook)
+app.delete('/livros/:id', livroController.deleteBook)
+app.put('/livros/:id', livroController.updateBook)
 
-app.post('/rota', (req,res) =>{
-    let newpost = {
-        id:posts.length+1,
-        nome: req.query.post};
-    posts.push(newpost);
-    res.status(201).json({
-        msg:"Post realizado",
-        dados: posts
-    })
 
-    console.log(posts)
-})
-
-app.delete('/rota/:id', (req,res) =>{
-    let {id} = req.params
-    let findPost = posts.findIndex(element => {
-        return element.id == id
-    } )
-
-    posts.splice(id,1)
-
-    res.status(202).json({
-        msg:"Post deletado",
-        dados: findPost
-    })
-
-    console.log(posts)
-}
-
-)
