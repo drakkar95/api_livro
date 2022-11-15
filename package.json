@@ -1,8 +1,8 @@
 {
   "name": "projetoapi_1",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "node test api de livros",
+  "main": "server.js",
   "engines":{
     "node":"14.x"
   },
