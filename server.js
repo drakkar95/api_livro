@@ -36,4 +36,4 @@ app.get('/', (req,res) => {
 
 routes(app);
 
-module.exports = app;
+export default app;
